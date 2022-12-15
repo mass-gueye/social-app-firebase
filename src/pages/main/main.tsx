@@ -15,6 +15,7 @@ export type TypePostList = {
 
 const Main = () => {
   const [user] = useAuthState(auth);
+
   const postsRef = collection(db, "posts");
   const [postList, setPostList] = React.useState<TypePostList[] | null>(null)
   const [value, loading, error] = useCollection(
@@ -26,7 +27,7 @@ const Main = () => {
   React.useEffect(() => {
     setPostList(value?.docs.map(doc => ({ ...doc.data(), id: doc.id })) as TypePostList[])
 
-  }, [])
+  }, [value])
 
   return (
     <div className='w-full'>
