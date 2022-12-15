@@ -9,25 +9,28 @@ import NotFound from './pages/notfound'
 
 export default function App() {
   return (
-    <div className='h-screen w-screen bg-slate-50'>
+    <div className=' h-screen w-screen bg-slate-50'>
       <AuthProvider>
         <Router>
           {/* Navbar */}
           <Navbar />
-          <Routes>
-            <Route path='/' element={
-              <PrivateRoute>
-                <Main />
-              </PrivateRoute>
-            } />
-            <Route path='login' element={<Login />} />
-            <Route path='create-post' element={
-              <PrivateRoute>
-                <CreatePost />
-              </PrivateRoute>
-            } />
-            <Route path='*' element={<NotFound />} />
-          </Routes>
+        
+
+            <Routes>
+              <Route path='/' element={
+                <PrivateRoute>
+                  <Main />
+                </PrivateRoute>
+              } />
+              <Route path='login' element={<Login />} />
+              <Route path='create-post' element={
+                <PrivateRoute>
+                  <CreatePost />
+                </PrivateRoute>
+              } />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          
         </Router>
       </AuthProvider>
     </div>

@@ -30,7 +30,7 @@ const Main = () => {
   }, [value])
 
   return (
-    <div className='w-full'>
+    <div className='bg-slate-100 mx-auto h-[88vh] overflow-auto flex flex-col items-center  gap-2 w-3/5'>
       <>
         {error && <strong>Error: {JSON.stringify(error)}</strong>}
         {loading && <span>Collection: Loading...</span>}
@@ -40,6 +40,7 @@ const Main = () => {
               <React.Fragment key={post.id}>
                 <Post post={post} />
               </React.Fragment>
+
             ))}
           </>
         )}

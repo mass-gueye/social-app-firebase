@@ -28,7 +28,7 @@ const Navbar = () => {
             <p className='text-sm hidden md:block text-white ml-2'>{user?.displayName}</p>
             <img src={user?.photoURL || ""}
               className='hover:cursor-pointer w-7 h-7 rounded-full'
-              alt="profile pic"
+              alt="profile"
               width={`100`}
               height={`100`}
             />
